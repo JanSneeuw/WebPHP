@@ -15,15 +15,6 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('create_superadmin')" :active="request()->routeIs('create_superadmin')">
-                        {{ __('Create New Admin') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('import_package')" :active="request()->routeIs('import_package')">
-                        {{ __('Import Package') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('packages')" :active="request()->routeIs('packages')">
-                        {{ __('Packages') }}
-                    </x-nav-link>
                 </div>
             </div>
 

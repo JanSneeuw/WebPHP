@@ -30,7 +30,7 @@ class PackagePolicy
      */
     public function view(User $user, Package $package)
     {
-        //
+        return $user->isAdmin() || $user->isAdministrative() || $user->isPacker();
     }
 
     /**
@@ -51,9 +51,9 @@ class PackagePolicy
      * @param  \App\Models\Package  $package
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Package $package)
+    public function update(User $user)
     {
-        //
+        return $user->isAdmin() || $user->isAdministrative();
     }
 
     /**

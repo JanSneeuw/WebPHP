@@ -19,11 +19,12 @@ class PackageFactory extends Factory
         return [
             'name' => $this->faker->word,
             'provider' => $this->faker->company,
-            'receiver_address' => $this->faker->address,
             'receiver_name' => $this->faker->name,
             'weight' => $this->faker->randomFloat(2, 0, 100),
             'measurements' => "0x0x0",
             'status' => $this->faker->randomElement(['Aangemeld', 'Uitgeprint', 'Afgeleverd', "Sorteercentrum", "Onderweg"]),
+            'carrier_id' => $this->faker->numberBetween(1, 10),
+            'address_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

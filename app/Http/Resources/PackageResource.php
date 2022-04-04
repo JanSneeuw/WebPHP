@@ -23,6 +23,11 @@ class PackageResource extends JsonResource
             'weight' => $this->weight,
             'measurements' => $this->measurements,
             'status' => $this->status,
+            'address_street' => $this->address->street,
+            'address_zip' => $this->address->zip,
+            'address_city' => $this->address->city,
+            'address_state' => $this->address->state,
+            'carrier' => $this->carrier->name,
         ];
     }
 }
