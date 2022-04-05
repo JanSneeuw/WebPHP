@@ -18,7 +18,7 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 h-10">
             <tr>
                 <th></th>
-                <th scope="col" class="px-6 py-3">{{__('Receiver_NAME')}}</th>
+                <th scope="col" class="px-6 py-3">{{__('Receiver_name')}}</th>
                 <th scope="col" class="px-6 py-3">{{__('Receiver_address')}}</th>
             </tr>
             </thead>
