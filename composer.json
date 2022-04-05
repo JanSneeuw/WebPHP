@@ -8,10 +8,12 @@
         "php": "^8.0.2",
         "barryvdh/laravel-dompdf": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "^1.2",
         "kyslik/column-sortable": "^6.0",
         "laravel/breeze": "v1.8.2",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
+        "laravel/scout": "^9.4",
         "laravel/tinker": "^2.7",
         "maatwebsite/excel": "^3.1.38",
         "milon/barcode": "9.0.0"

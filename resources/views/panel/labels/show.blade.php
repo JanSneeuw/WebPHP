@@ -14,7 +14,7 @@
             <p class="text-gray-600 leading-tight">{{ $label->receiver_name }}</p>
             <br/>
             <h1 class="font-semibold text-l text-gray-800 leading-tight">Receiver Address: </h1>
-            <p class="text-gray-600 leading-tight">{{ $label->address->street }}</p>
+            <p class="text-gray-600 leading-tight">{{ $label->street }}</p>
             <br/>
             <form method="get" action="{{route('downloadpdf')}}">
                 <input type="hidden" name="label_id" value="{{$label->id}}">

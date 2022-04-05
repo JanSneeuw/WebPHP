@@ -20,6 +20,12 @@ return new class extends Migration
             $table->string('state');
             $table->string('zip');
             $table->timestamps();
+
+            $table->fullText('street');
+            $table->fullText('city');
+            $table->fullText('state');
+            $table->fullText('zip');
+
         });
     }
 

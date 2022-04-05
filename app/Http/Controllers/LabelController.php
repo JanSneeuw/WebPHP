@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLabelRequest;
 use App\Http\Requests\UpdateLabelRequest;
+use App\Models\Address;
 use App\Models\Label;
 use App\Models\Package;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -19,11 +20,18 @@ class LabelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $labels = Label::sortable()->paginate(25);
+        $search = $request->query('search');
+        if (!empty($search)){
+            $labels = Label::search($search)->paginate(25);
+        }else{
+            $labels = Label::paginate(25);
+        }
 
-        return view('panel.labels.index', compact('labels'));
+        return view('panel.labels.index')
+            ->with('labels', $labels)
+            ->with('search', $search);
     }
 
     /**
@@ -48,11 +56,15 @@ class LabelController extends Controller
         $labels = [];
         foreach ($request->packages as $package_id) {
             $package = Package::find($package_id);
+            $address = Address::find($package->address_id);
             $label = Label::firstOrCreate(['package_id' => $package_id],
                 [
                     'package_id' => $package_id,
                     'receiver_name' => $package->receiver_name,
-                    'address_id' => $package->address_id,
+                    'street' => $address->street,
+                    'city' => $address->city,
+                    'state' => $address->state,
+                    'zip' => $address->zip,
                 ]);
             $label->qrcode_link = 'localhost:8000/labels/' . $label->id;
             $label->save();

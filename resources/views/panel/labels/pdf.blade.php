@@ -43,7 +43,7 @@
                 <p class="text-gray-600 leading-tight">{{ $label->receiver_name }}</p>
 
                 <h1 class="font-semibold text-l text-gray-800 leading-tight">Address: </h1>
-                <p class="text-gray-600 leading-tight">{{ $label->address->street }}</p>
+                <p class="text-gray-600 leading-tight">{{ $label->street }}</p>
 
             </div>
         </div>
